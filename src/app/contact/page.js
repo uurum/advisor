@@ -76,7 +76,7 @@ function Contact() {
                   Aenean ac tortor at tellus feugiat congue quis ut nunc. Semper
                   ac dolor Eaque ipsa quae. ab illo inventore veritatis et quasi
                   architecto beatae vitae dicta sunt explicabo. luptas sit
-                  aspernatur.
+                  aspernatur
                 </p>
               </div>
             </div>
