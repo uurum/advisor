@@ -3,9 +3,10 @@ import logo from "@/assets/images/logo.png";
 import styles from "./Header.module.scss";
 import Link from "next/link";
 
-function Header() {
+ function Header() {
   return (
-    <header className={styles.header + " flex flex-col"}>
+    <div className="flex justify-center">
+    <header className="my-8 max-w-6xl ">
       <div className="flex items-center justify-between p-4">
         <span className={styles.head + " whitespace-nowrap px-8"}>
           We have over 15 years of experience
@@ -29,10 +30,10 @@ function Header() {
         <Image src={logo} alt="logo" />
         <nav className="flex items-center gap-6">
             <Link href="/contact">
-                İletişim
+                Contact
             </Link>
-            <Link href="/contact">
-                Hakkımızda
+            <Link href="/financial">
+                Financial
             </Link>
             <Link href="/contact">
                 İletişim
@@ -40,6 +41,7 @@ function Header() {
         </nav>
       </div>
     </header>
+    </div>
   );
 }
 
