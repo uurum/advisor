@@ -2,14 +2,27 @@
 
 import React, { useState, useEffect } from "react";
 import { Chart } from "primereact/chart";
-import { Accordion, AccordionTab } from "primereact/accordion";
 import { TabView, TabPanel } from "primereact/tabview";
 import { Button } from "primereact/button";
 import { Card } from "primereact/card";
+import { AccordionTab } from "primereact/accordion";
+import { Accordion } from "primereact/accordion";
+import SimpleSlider from "../components/layout/SimpleSlider";
+import services from "@/assets/images/services.jpg";
+import "primeicons/primeicons.css";
+import Link from "next/link";
+
+import Image from "next/image";
 
 function Financial() {
   const [chartData, setChartData] = useState({});
   const [chartOptions, setChartOptions] = useState({});
+
+  const slides = [
+    <Image src={services} />,
+    <Image src={services} />,
+    <Image src={services} />,
+  ];
 
   useEffect(() => {
     const documentStyle = getComputedStyle(document.documentElement);
@@ -40,27 +53,32 @@ function Financial() {
   }, []);
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center bg-white">
       <div className="max-w-6xl">
         <div className="flex justify-center">
           <div className="flex flex-col w-1/4 mr-8">
             <ul>
-              <li className="p-4  bg-gray-300  hover:border-l-8 border-blue-600">
-                <a href="www.bonds.com">Bonds</a>
+              <li className="p-4 flex justify-between items-center bg-slate-200 border-l-8  border-transparent hover:border-l-8 hover:border-green-600">
+                <Link href="/contact">Contact</Link>
+                <i className="pi pi-chevron-right "></i>
               </li>
-              <li className="p-4  bg-gray-300  hover:border-l-8 border-blue-600">
-                <a href="www.bonds.com">Bonds</a>
+              <li className="p-4 flex justify-between items-center bg-slate-200 border-l-8  border-transparent hover:border-l-8 hover:border-green-600">
+                <Link href="/financial">Financial</Link>
+                <i className="pi pi-chevron-right "></i>
               </li>
-              <li className="p-4  bg-gray-300  hover:border-l-8 border-blue-600">
-                <a href="www.bonds.com">Bonds</a>
+              <li className="p-4 flex justify-between items-center bg-slate-200 border-l-8  border-transparent hover:border-l-8 hover:border-green-600">
+                <Link href="/contact">Contact</Link>
+                <i className="pi pi-chevron-right "></i>
               </li>
-              <li className="p-4  bg-gray-300  hover:border-l-8 border-blue-600">
-                <a href="www.bonds.com">Bonds</a>
+              <li className="p-4 flex justify-between items-center bg-slate-200 border-l-8  border-transparent hover:border-l-8 hover:border-green-600">
+                <Link href="/contact">Contact</Link>
+                <i className="pi pi-chevron-right "></i>
               </li>
             </ul>
 
             <Card
               title="Title"
+              className="mt-4"
               style={{ backgroundColor: "#09a223", color: "white" }}
             >
               <p className="m-0 text-white">
@@ -73,13 +91,20 @@ function Financial() {
                 Contact Us
               </Button>
             </Card>
+
+            <Card
+              title="Title"
+              className=" bg-white text-black mt-4 border text-center"
+            >
+              <p className="m-0 p-4">
+                Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed
+                do eiusmod tempor.
+              </p>
+            </Card>
           </div>
 
           <div className="flex flex-col  w-3/4">
-            <img
-              src="http://advisor.brighthemes.biz/demo/wp-content/uploads/2016/08/services-img1-1.jpg"
-              className="max-w-full"
-            ></img>
+            <SimpleSlider slides={slides} />
 
             <div className="mt-8">
               <p className="text-lg">
@@ -112,13 +137,13 @@ function Financial() {
 
               <div className="grid  grid-cols-2 gap-16 px-24">
                 <div className="chart">
+                  <div className="card flex justify-content-center"></div>
                   <Chart
                     type="doughnut"
                     data={chartData}
                     options={chartOptions}
                     className="w-full md:w-30rem"
                   />
-
                   <p>cing elit, sed do eiusmod tempor xercitationemut labore</p>
                 </div>
 
@@ -140,7 +165,6 @@ function Financial() {
                     options={chartOptions}
                     className="w-full md:w-30rem"
                   />
-
                   <p>cing elit, sed do eiusmod tempor xercitationemut labore</p>
                 </div>
 
@@ -174,7 +198,7 @@ function Financial() {
               <h1 className="text-3xl my-4">Business plan market</h1>
 
               <div className="card">
-                <Accordion multiple activeIndex={[0]}>
+                <Accordion activeIndex={0}>
                   <AccordionTab header="Header I">
                     <p className="m-0">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,

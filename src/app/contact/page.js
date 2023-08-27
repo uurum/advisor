@@ -19,7 +19,10 @@ function Contact() {
 
   return (
     <div className="flex justify-center  bg-slate-50">
-      <div className="max-w-5xl">
+
+
+
+      <div className="max-w-6xl">
 
         <div className="grid grid-cols-2">
           <div className="col-span-1 ">

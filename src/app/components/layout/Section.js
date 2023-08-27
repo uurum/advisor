@@ -1,21 +1,28 @@
 import React from "react";
 import { Button } from "primereact/button";
+import { usePathname } from 'next/navigation'
+
 
 export default function Section() {
+
+  const pathname = usePathname();
+
+
   return (
-    <div className="flex justify-center">
-      <div
-        className=" flex  justify-around align-middle p-10  w-full "
-        style={{ backgroundColor: "#e9e9e9" }}
-      >
+    <div
+      className="flex justify-center "
+      style={{ backgroundColor: "#e9e9e9" }}
+    >
+      <div className=" flex  justify-between align-middle py-10  w-full max-w-6xl">
         <div className="flex float-left">
-          <h2 className="mb-4 mr-4 text-4xl">Contact Us </h2>
+          <h2 className="mb-4 mr-4 text-4xl">{pathname} </h2>
 
           <ul className="flex mt-8">
             <li>
               <a href="http://advisor.brighthemes.biz/demo/">Home</a>
             </li>
-            <li>/Contact Us</li>
+            <li>Contact Us</li>
+
           </ul>
         </div>
 
