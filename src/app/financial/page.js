@@ -53,10 +53,10 @@ function Financial() {
   }, []);
 
   return (
-    <div className="flex justify-center bg-white">
+    <div className="flex justify-center bg-white ">
       <div className="max-w-6xl">
-        <div className="flex justify-center">
-          <div className="flex flex-col w-1/4 mr-8">
+        <div className="grid grid-cols-4 max-md:grid-cols-1">
+          <div className="col-span-1 ">
             <ul>
               <li className="p-4 flex justify-between items-center bg-slate-200 border-l-8  border-transparent hover:border-l-8 hover:border-green-600">
                 <Link href="/contact">Contact</Link>
@@ -103,7 +103,7 @@ function Financial() {
             </Card>
           </div>
 
-          <div className="flex flex-col  w-3/4">
+          <div className="col-span-3 ">
             <SimpleSlider slides={slides} />
 
             <div className="mt-8">

@@ -7,7 +7,6 @@ import { InputTextarea } from "primereact/inputtextarea";
 import "primeicons/primeicons.css";
 import { useForm } from "react-hook-form";
 
-
 function Contact() {
   const {
     register,
@@ -18,13 +17,10 @@ function Contact() {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <div className="flex justify-center  bg-slate-50">
-
-
-
+    <div className="flex justify-center  bg-slate-50 ">
       <div className="max-w-6xl">
+        <div className="grid grid-cols-2  max-md:grid-cols-1">
 
-        <div className="grid grid-cols-2">
           <div className="col-span-1 ">
             <div className="flex ">
               <div className="py-4">
