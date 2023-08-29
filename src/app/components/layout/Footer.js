@@ -6,7 +6,6 @@ import "primeicons/primeicons.css";
 import Image from "next/image";
 import footerLogo from "@/assets/images/footerLogo.png";
 
-
 export default function Footer() {
   const {
     register,
@@ -18,10 +17,10 @@ export default function Footer() {
 
   return (
     <div className="flex justify-center bg-gray-100">
-      <div className="grid grid-cols-3 max-w-5xl ">
+      <div className="grid grid-cols-3 max-w-5xl max-md:grid-cols-1">
         <div className="col-span-3 flex">
           <div className=" p-5">
-            <Image src={footerLogo} width={400}  alt="Footer Logo" />
+            <Image src={footerLogo} width={400} alt="Footer Logo" />
           </div>
           <div className=" p-5 ">
             <p>
@@ -34,7 +33,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="col-span-2 p-4">
+        <div className="col-span-2 p-4 bg-white ">
           <div className="flex text-gray-500">
             <i className="pi pi-phone m-4" style={{ fontSize: "2rem" }}></i>
 
@@ -52,7 +51,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className=" row-span-3 p-4" style={{ backgroundColor: "#e9e9e9" }}>
+        <div
+          className=" row-span-3 p-4 max-md:col-span-3"
+          style={{ backgroundColor: "#e9e9e9" }}
+        >
           <h4 className="p-5 text-2xl">Newsletter</h4>
 
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col ">

@@ -11,51 +11,20 @@ import SimpleSlider from "../components/layout/SimpleSlider";
 import services from "@/assets/images/services.jpg";
 import "primeicons/primeicons.css";
 import Link from "next/link";
-
 import Image from "next/image";
+import Pie from "../components/layout/Pie";
 
 function Financial() {
-  const [chartData, setChartData] = useState({});
-  const [chartOptions, setChartOptions] = useState({});
-
   const slides = [
     <Image src={services} />,
     <Image src={services} />,
     <Image src={services} />,
   ];
 
-  useEffect(() => {
-    const documentStyle = getComputedStyle(document.documentElement);
-    const data = {
-      labels: ["A", "B", "C"],
-      datasets: [
-        {
-          data: [300, 50, 100],
-          backgroundColor: [
-            documentStyle.getPropertyValue("--blue-500"),
-            documentStyle.getPropertyValue("--yellow-500"),
-            documentStyle.getPropertyValue("--green-500"),
-          ],
-          hoverBackgroundColor: [
-            documentStyle.getPropertyValue("--blue-400"),
-            documentStyle.getPropertyValue("--yellow-400"),
-            documentStyle.getPropertyValue("--green-400"),
-          ],
-        },
-      ],
-    };
-    const options = {
-      cutout: "60%",
-    };
-
-    setChartData(data);
-    setChartOptions(options);
-  }, []);
-
   return (
-    <div className="flex justify-center bg-white ">
-      <div className="max-w-6xl">
-        <div className="grid grid-cols-4 max-md:grid-cols-1">
+    <div className="flex justify-center bg-white">
+      <div className="max-w-6xl mt-16">
+        <div className="grid grid-cols-4 gap-8 max-md:grid-cols-1 max-md:gap-0">
           <div className="col-span-1 ">
             <ul>
               <li className="p-4 flex justify-between items-center bg-slate-200 border-l-8  border-transparent hover:border-l-8 hover:border-green-600">
@@ -135,46 +104,27 @@ function Financial() {
 
               <h1 className="text-3xl my-4">Safety Wealth</h1>
 
-              <div className="grid  grid-cols-2 gap-16 px-24">
-                <div className="chart">
-                  <div className="card flex justify-content-center"></div>
-                  <Chart
-                    type="doughnut"
-                    data={chartData}
-                    options={chartOptions}
-                    className="w-full md:w-30rem"
-                  />
-                  <p>cing elit, sed do eiusmod tempor xercitationemut labore</p>
-                </div>
-
-                <div className="chart">
-                  <Chart
-                    type="doughnut"
-                    data={chartData}
-                    options={chartOptions}
-                    className="w-full md:w-30rem"
-                  />
+              <div className="grid grid-cols-2 ">
+                <div className="chart ">
+                  <Pie a={200} b={60} c={100} />
 
                   <p>cing elit, sed do eiusmod tempor xercitationemut labore</p>
                 </div>
 
                 <div className="chart">
-                  <Chart
-                    type="doughnut"
-                    data={chartData}
-                    options={chartOptions}
-                    className="w-full md:w-30rem"
-                  />
+                  <Pie a={100} b={160} c={100} />
+
                   <p>cing elit, sed do eiusmod tempor xercitationemut labore</p>
                 </div>
 
                 <div className="chart">
-                  <Chart
-                    type="doughnut"
-                    data={chartData}
-                    options={chartOptions}
-                    className="w-full md:w-30rem"
-                  />
+                  <Pie a={100} b={100} c={160} />
+
+                  <p>cing elit, sed do eiusmod tempor xercitationemut labore</p>
+                </div>
+
+                <div className="chart">
+                  <Pie a={100} b={160} c={100} />
 
                   <p>cing elit, sed do eiusmod tempor xercitationemut labore</p>
                 </div>
@@ -182,7 +132,7 @@ function Financial() {
 
               <h1 className="text-3xl my-4">Business Strategy</h1>
 
-              <div className="flex">
+              <div className="flex max-md:flex-col">
                 <p className="text-xl">
                   We have over 15 years of experience Lorem ipsum dolor sit
                   amet, consectetur adipiscing elit. Aenean Lorem ipsm dolor sit
@@ -192,7 +142,7 @@ function Financial() {
                   suscipit Curabitur metus ipsum.
                 </p>
 
-                <img src="http://advisor.brighthemes.biz/demo/wp-content/uploads/2016/08/services-img.jpg"></img>
+                <Image width={500} src={services} />
               </div>
 
               <h1 className="text-3xl my-4">Business plan market</h1>
@@ -238,17 +188,12 @@ function Financial() {
                 </Accordion>
               </div>
 
-              <div className="flex flex-row">
-                <div className="felx felx-col w-1/2">
+              <div className="flex flex-row max-md:flex-col">
+                <div className="flex flex-col ">
                   <h1 className="text-3xl my-4">Safety wealth</h1>
 
                   <div className="chart">
-                    <Chart
-                      type="doughnut"
-                      data={chartData}
-                      options={chartOptions}
-                      className="w-full md:w-30rem"
-                    />
+                    <Pie a={100} b={160} c={100} />
 
                     <p>
                       cing elit, sed do eiusmod tempor xercitationemut labore
@@ -256,7 +201,7 @@ function Financial() {
                   </div>
                 </div>
 
-                <div className="felx felx-col w-1/2">
+                <div className="felx felx-col ">
                   <h1 className="text-3xl my-4">Business planning</h1>
 
                   <ul>
